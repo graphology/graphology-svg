@@ -1,4 +1,4 @@
-<!-- [![Build Status](https://travis-ci.org/graphology/graphology-svg.svg)](https://travis-ci.org/graphology/graphology-svg) -->
+[![Build Status](https://travis-ci.org/graphology/graphology-svg.svg)](https://travis-ci.org/graphology/graphology-svg)
 
 # Graphology SVG
 
