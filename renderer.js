@@ -14,6 +14,9 @@ var components = {
   },
   edges: {
     line: require('./components/edges/line.js')
+  },
+  nodeLabels: {
+    default: require('./components/nodeLabels/default.js')
   }
 };
 
@@ -45,12 +48,14 @@ function renderer(graph, settings) {
     );
   });
 
-  // Drawing nodes
+  // Drawing nodes and labels
   // TODO: should we draw in size order to avoid weird overlaps? Should we run noverlap?
   var nodesStrings = [];
+  var nodeLabelsStrings = [];
   var k;
   for (k in nodeData) {
     nodesStrings.push(components.nodes[nodeData[k].type](settings, nodeData[k]));
+    nodeLabelsStrings.push(components.nodeLabels[nodeData[k].labelType](settings, nodeData[k]));
   }
 
   return (
@@ -61,6 +66,7 @@ function renderer(graph, settings) {
            'xmlns="http://www.w3.org/2000/svg">' +
         '<g>' + edgesStrings.join('') + '</g>' +
         '<g>' + nodesStrings.join('') + '</g>' +
+        '<g>' + nodeLabelsStrings.join('') + '</g>' +
       '</svg>'
   );
 }

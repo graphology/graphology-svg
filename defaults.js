@@ -17,6 +17,7 @@ exports.DEFAULTS = DEFAULTS;
 exports.DEFAULT_NODE_REDUCER = function(settings, node, attr) {
   var reduced = {
     type: attr.type || 'circle',
+    labelType: attr.labelType || 'default',
     label: attr.label || node,
     x: attr.x,
     y: attr.y,
