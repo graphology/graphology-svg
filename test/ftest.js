@@ -11,8 +11,9 @@ var render = require('../');
 
 var OUTPUT_PATH = path.join(__dirname, 'output');
 var ARCTIC_PATH = path.join(__dirname, 'resources', 'arctic.gexf');
-var RENDER_PATH = path.join(OUTPUT_PATH, 'arctic.png');
+var RENDER_PATH = path.join(OUTPUT_PATH, 'arctic.svg');
 
+fs.removeSync(OUTPUT_PATH);
 fs.ensureDirSync(OUTPUT_PATH);
 
 var ARCTIC = gexf.parse(Graph, fs.readFileSync(ARCTIC_PATH, 'utf-8'));
