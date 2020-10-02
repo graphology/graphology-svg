@@ -65,4 +65,24 @@ function reduceNodes(graph, settings) {
   return data;
 }
 
+// Minimalist XML escaping function
+var ESCAPE_PATTERN = /["'<>&]/g;
+
+var ESCAPE_MAP = {
+  '"': '&quot;',
+  '\'': '&apos;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '&': '&amp;'
+};
+
+function escapeReplacer(char) {
+  return ESCAPE_MAP[char];
+}
+
+function escape(string) {
+  return string.replace(ESCAPE_PATTERN, escapeReplacer);
+}
+
 exports.reduceNodes = reduceNodes;
+exports.escape = escape;

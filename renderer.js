@@ -59,9 +59,9 @@ function renderer(graph, settings) {
   }
 
   return (
-    '<?xml version="1.0"?>' +
+    '<?xml version="1.0" encoding="utf-8"?>' +
       '<svg width="' + settings.width + '" height=" ' + settings.height + '" ' +
-           'viewPort="0 0 ' + settings.width + ' ' + settings.height + '" ' +
+           'viewBox="0 0 ' + settings.width + ' ' + settings.height + '" ' +
            'version="1.1" ' +
            'xmlns="http://www.w3.org/2000/svg">' +
         '<g>' + edgesStrings.join('') + '</g>' +
