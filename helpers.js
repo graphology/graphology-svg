@@ -55,10 +55,6 @@ function reduceNodes(graph, settings) {
     n.x = width / 2 + (n.x - xBarycenter) * ratio;
     n.y = height / 2 + (n.y - yBarycenter) * ratio;
 
-    // Conserving original orientation
-    if (xBarycenter < 0) n.x = width - n.x;
-    if (yBarycenter < 0) n.y = height - n.y;
-
     n.size *= ratio; // TODO: keep?
   }
 
